@@ -57,7 +57,7 @@ Choose an option:
 """
 menu_selection = None
 
-while menu_selection != 3:
+while True:
     menu_selection = int(input(menu))
     if menu_selection == 1:
         read_email(int(input(list_emails())) - 1)
@@ -65,5 +65,7 @@ while menu_selection != 3:
         for email in inbox:
             if not email.has_been_read:
                 print(email.subject_line)
+    elif menu_selection == 3:
+        break
     else:
         print("Please enter a valid option of 1, 2 or 3")
