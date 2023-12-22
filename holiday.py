@@ -13,7 +13,7 @@ hotel and car-rental costs.
 #Request from the user their chosen flight (by selecting an option),
 #how many nights they will stay in a hotel,
 #and how many days they will rent a  car.
-#Inform the user of the total cost of their holiday.
+#Inform the user of the costs of their holiday.
 
 
 class Flight:
@@ -66,6 +66,7 @@ city_options = ""
 for index, flight in enumerate(flights):
     city_options += f"{index + 1} --- {flight.destination} --- £{flight.price}\n"
 
+
 #Request information from the user, convert given values to integers and
 #assign values to appropriate variables.
 #N.B. 1 is subtracted from the value given for flight destination so that the
@@ -74,5 +75,22 @@ city_flight = int(input("What city are you flying to?" + "\n" + city_options)) -
 num_nights = int(input("How many nights will you be staying at a hotel? "))
 rental_days = int(input("How many days will you hire a car for? "))
 
-#Present the total holiday cost back to the user.
-print(f"Hotel cost: £{holiday_cost(num_nights, city_flight, rental_days)}")
+#Present the component and total holiday costs back to the user.
+print(
+    "\nThank you for providing the information. Your quote is:"
+    +"\n\n"
+    +f"{num_nights} nights in the hotel. Cost: £{hotel_cost(num_nights)}\n"
+    +f"{rental_days} days car rental. Cost: £{car_rental_cost(rental_days)}\n"
+    +f"Flight to {flights[city_flight].destination}. "
+    +f"Cost: £{plane_cost(city_flight)}"
+    +"\n\n"
+    +f"Total holiday cost: £{holiday_cost(num_nights, city_flight, rental_days)}"
+    )
+
+#Note to reviewer:
+#I could reduce the number of operations by assigning variables to the
+#values returned by calling the functions for hotel, car rental and hotel
+#costs, and then adding them up for the total holiday cost in the print
+#statement. This would #negate the need to call the functions again in the 
+#'holiday_cost' function. However I wanted to keep to the brief laid out by
+#the task.
