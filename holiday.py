@@ -71,6 +71,7 @@ for index, flight in enumerate(flights):
 #assign values to appropriate variables.
 #N.B. 1 is subtracted from the value given for flight destination so that the
 #correct index value is passed to the 'plane_cost' function.
+print("Welcome to TravelUp - find a quick quote for your trip!\n")
 city_flight = int(input("What city are you flying to?" + "\n" + city_options)) - 1
 num_nights = int(input("How many nights will you be staying at a hotel? "))
 rental_days = int(input("How many days will you hire a car for? "))
@@ -91,6 +92,6 @@ print(
 #I could reduce the number of operations by assigning variables to the
 #values returned by calling the functions for hotel, car rental and hotel
 #costs, and then adding them up for the total holiday cost in the print
-#statement. This would #negate the need to call the functions again in the 
+#statement. This would #negate the need to call the functions again in the
 #'holiday_cost' function. However I wanted to keep to the brief laid out by
 #the task.
