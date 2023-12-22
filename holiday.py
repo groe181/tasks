@@ -50,7 +50,7 @@ def car_rental_cost(days):
 
 def holiday_cost(nights, city, days):
     "Sums up the component parts of the holiday cost provided by the user."
-    return hotel_cost(nights) + plane_cost(city) + car_rental_cost(days) 
+    return hotel_cost(nights) + plane_cost(city) + car_rental_cost(days)
 
 #Produces a string that shows the user the flight options by looping through
 #the 'flights' list.
@@ -71,7 +71,7 @@ for index, flight in enumerate(flights):
 #N.B. 1 is subtracted from the value given for flight destination so that the
 #correct index value is passed to the 'plane_cost' function.
 city_flight = int(input("What city are you flying to?" + "\n" + city_options)) - 1
-num_nights = int(input("How many nights will you be staying at a hotel? "))             
+num_nights = int(input("How many nights will you be staying at a hotel? "))
 rental_days = int(input("How many days will you hire a car for? "))
 
 #Present the total holiday cost back to the user.
