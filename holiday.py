@@ -80,8 +80,8 @@ rental_days = int(input("How many days will you hire a car for? "))
 print(
     "\nThank you for providing the information. Your quote is:"
     +"\n\n"
-    +f"{num_nights} nights in the hotel. Cost: £{hotel_cost(num_nights)}\n"
-    +f"{rental_days} days car rental. Cost: £{car_rental_cost(rental_days)}\n"
+    +f"{num_nights} night{'s' if (num_nights > 1) else ''} in the hotel. Cost: £{hotel_cost(num_nights)}\n"
+    +f"{rental_days} day{'s' if (rental_days > 1) else ''} car rental. Cost: £{car_rental_cost(rental_days)}\n"
     +f"Flight to {flights[city_flight].destination}. "
     +f"Cost: £{plane_cost(city_flight)}"
     +"\n\n"
