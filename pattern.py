@@ -1,20 +1,15 @@
 """This program prints a pattern of stars."""
 
-#Initialise a string variable assigned to an asterisk character (representing a star).
-#Run a for loop that runs 9 times, with the number of iterations performed assigned to variable num.
+#Run a for loop that runs 9 times which is equal to the height of the pattern.
+#with num reflecting the number of iterations that has run.
 #Each time the loop runs:
-    #print the value assigned to stars
-    #change the value of stars by:
-        #if the value of num is less than 5, concatenate the current value of stars with an additional "*"
-        #else slice the last value of stars to remove an "*"
-
-
-stars = "*"
+#if the value of num is less than or equal to 5, print that many "*"
+#otherwise subtract the number of iterations from 10,
+#and print that many stars. This is to reduce the width of the pattern by 1
+#each time.
 
 for num in range(1, 10):
-    print(stars)
-    if num < 5:
-        stars += "*"
+    if num <= 5:
+        print("*" * num)
     else:
-        stars = stars[:-1]
-        
+        print("*" * (10 - num))
